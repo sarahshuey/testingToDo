@@ -1,12 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Todo from "./Todo";
+import Todo from "./Todo.js";
+
 
 test('Todo renders correctly', () => {
     const tree = renderer.create(
-      <input type="checkbox" checked={todo.done} onChange={event => handleToggle(todo.id)}/>
-      <span className={todo.done ? "todo-done" : "todo-not-done"} onClick={event => handleToggle(todo.id)}>{todo.text}</span>
-  </div>
+        <Todo todo={{text: "Test", id: 1, done: false}} />
     ).toJSON();
     expect(tree).toMatchSnapshot();
 });
