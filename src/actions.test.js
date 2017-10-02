@@ -13,4 +13,7 @@ describe("Test for action types", function() {
   test('Returns correct ID', function() {
   expect(toggleTodo(1)).toEqual({type:TOGGLE_TODO, payload: 1});
 })
+test('Returns filtertype', function() {
+   expect(filterTodos('All')).toEqual({type:FILTER_TODOS, payload: 'All'});
+ })
 })
